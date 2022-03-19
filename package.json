@@ -1,8 +1,8 @@
 {
-  "name": "gabo-v2",
-  "version": "1.0.0",
+  "name": "gabo",
+  "version": "2.0.0",
   "private": true,
-  "description": "gabo-v2",
+  "description": "gabo",
   "keywords": [
     "gatsby"
   ],
