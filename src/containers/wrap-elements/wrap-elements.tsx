@@ -1,5 +1,6 @@
 import React from "react"
 import { ApolloProvider } from "@apollo/client"
+import { QueryClient, QueryClientProvider } from "react-query"
 import { client } from "../../apollo/client"
 import { getCssText } from "@/styled"
 
@@ -12,8 +13,13 @@ type RenderBodyProps = {
   setHeadComponents?: any
 }
 
+const queryClient = new QueryClient()
+
 export const wrapRootElement: React.FC<Props> = ({ element }) => (
-  <ApolloProvider client={client}>{element}</ApolloProvider>
+  <QueryClientProvider client={queryClient}>
+    <ApolloProvider client={client}>{element}</ApolloProvider>
+     {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+  </QueryClientProvider>
 )
 
 // export const wrapPageElement: React.FC<Props> = ({ element, props }) => (
