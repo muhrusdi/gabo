@@ -3,7 +3,10 @@ import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Gabo v2`,
-    siteUrl: `https://www.yourdomain.tld`
+    description: "The modern web boilerplate for quickly development",
+    siteUrl: `https://www.yourdomain.tld`,
+    author: "muhrusdi",
+    keywords: ["gastby", "boilerplate", "typescript", "react"],
   },
   plugins: [
     // {

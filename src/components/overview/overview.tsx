@@ -1,13 +1,15 @@
 import React from "react"
 import { StyledOverview, StyledSpan } from "./styled"
+import { SEO } from "../seo"
 
 export const Overview = () => {
   return (
     <StyledOverview className="bg-[#FDF6F7] min-h-screen">
+      <SEO/>
       <div className="container max-w-3xl">
         <div className="text-center pb-10 z-20 relative pt-14">
           <h1 className="font-black text-7xl">Gabo <StyledSpan>v2</StyledSpan></h1>
-          <p className="text-gray-600 mt-4 text-lg">The modern web boilerplate for quickly development.</p>
+          <p className="text-gray-600 mt-4 text-lg">The modern web boilerplate for quickly development</p>
           <ul className="mt-8 flex space-x-8 items-center justify-center flex-wrap">
             <li>
               <div className="flex space-x-3 items-center mt-6">
