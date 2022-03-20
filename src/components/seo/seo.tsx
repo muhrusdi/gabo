@@ -34,7 +34,7 @@ export const SEO: React.FC<Props> = ({title, description, lang}) => {
       }}
       meta={[
         {
-          name: `description`,
+          name: "description",
           content: metaDescription,
         },
         {

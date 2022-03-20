@@ -13,6 +13,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
+    "format": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx . --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

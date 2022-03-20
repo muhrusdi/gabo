@@ -15,10 +15,10 @@ const aliases = {
 }
 
 export const onCreateWebpackConfig = ({
-  stage,
-  getConfig,
-  rules,
-  loaders,
+  // stage,
+  // getConfig,
+  // rules,
+  // loaders,
   actions,
 }: CreateWebpackConfigArgs) => {
   actions.setWebpackConfig({
