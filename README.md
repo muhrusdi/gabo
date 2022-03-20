@@ -4,13 +4,13 @@
 
 ## 🚀 Quick starts
 
-1.  **Create a Gatsby site.**
+1.  **Create a your site.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+    Use the command to create a new site.
 
     ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
+    # create a new site using the Gabo starter
+    git clone https://github.com/muhrusdi/gabo.git my-site
     ```
 
 2.  **Start developing.**
@@ -18,7 +18,7 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-gatsby-site/
+    cd my-site/
     npm run develop
     ```
 
