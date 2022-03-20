@@ -23,3 +23,11 @@ export const StyledSpan = styled("span", {
   backgroundClip: "text",
   textFillColor: "transparent"
 })
+
+export const StyledTechList = styled("ul", {
+  "& > li": {
+    "&:not(:last-of-type)": {
+      marginLeft: "2rem"
+    }
+  }
+})

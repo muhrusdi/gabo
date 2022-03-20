@@ -1,8 +1,24 @@
-import React from "react"
-import { StyledOverview, StyledSpan } from "./styled"
+import React, { useRef, useState } from "react"
+import { StyledOverview, StyledSpan, StyledTechList } from "./styled"
+import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../seo"
 
 export const Overview = () => {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [copied, setCopied] = useState(false)
+
+
+  const handleCopyToClipboard = () => {
+    inputRef.current && inputRef.current.select();
+    inputRef.current && inputRef.current.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    navigator.clipboard.writeText(inputRef.current && inputRef.current.value || "");
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 1000)
+
+  }
   return (
     <StyledOverview className="bg-[#FDF6F7] min-h-screen">
       <SEO/>
@@ -10,7 +26,7 @@ export const Overview = () => {
         <div className="text-center pb-10 z-20 relative pt-14">
           <h1 className="font-black text-7xl">Gabo <StyledSpan>v2</StyledSpan></h1>
           <p className="text-gray-600 mt-4 text-lg">The modern web boilerplate for quickly development</p>
-          <ul className="mt-8 flex space-x-8 items-center justify-center flex-wrap">
+          <StyledTechList className="mt-8 flex items-center justify-center flex-wrap">
             <li>
               <div className="flex space-x-3 items-center mt-6">
                 <div>
@@ -166,7 +182,42 @@ export const Overview = () => {
                 </div>
               </div>
             </li>
-          </ul>
+          </StyledTechList>
+          <div className="mt-8">
+            <div className="rounded-lg bg-fuchsia-100 inline-block relative">
+              <code className="bg-transparent w-full block h-full text-fuchsia-700 px-4 py-2 pr-10">git clone https://github.com/muhrusdi/gabo.git site-name</code>
+              <input ref={inputRef} type="text" className="bg-transparent w-full h-full text-fuchsia-700 px-4" hidden value="git clone https://github.com/muhrusdi/gabo.git site-name" />
+              <button onClick={handleCopyToClipboard} className="text-fuchsia-700 absolute right-2 top-1/2 -translate-y-1/2 rounded-md hover:bg-fuchsia-200 transition p-1">
+                {
+                  copied ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+</svg>
+                  ) : (
+
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+</svg>
+                  )
+                }
+              </button>
+            </div>
+          </div>
+          <footer className="fixed bottom-8 left-1/2 -translate-x-1/2 transform">
+            <div className="flex items-center space-x-3">
+              <div className="text-slate-500">
+                <span>By</span>
+              </div>
+              <div>
+                <StaticImage placeholder="blurred" aspectRatio={16/9} height={32} width={32} layout="constrained" className="h-8 w-8 rounded-full" src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="" />
+              </div>
+              <div>
+                <a href="https://twitter.com/mhmrus" target="_blank" className="text-slate-500 font-semibold">
+                  <span>@mhmrus</span>
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </StyledOverview>
