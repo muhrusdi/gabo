@@ -185,8 +185,8 @@ export const Overview = () => {
           </StyledTechList>
           <div className="mt-8">
             <div className="rounded-lg bg-fuchsia-100 inline-block relative">
-              <code className="bg-transparent w-full block h-full text-fuchsia-700 px-4 py-2 pr-10">git clone https://github.com/muhrusdi/gabo.git site-name</code>
-              <input ref={inputRef} type="text" className="bg-transparent w-full h-full text-fuchsia-700 px-4" hidden value="git clone https://github.com/muhrusdi/gabo.git site-name" />
+              <code className="bg-transparent w-full block h-full text-fuchsia-700 px-4 py-2 pr-10">git clone https://github.com/muhrusdi/gabo.git my-site</code>
+              <input ref={inputRef} type="text" className="bg-transparent w-full h-full text-fuchsia-700 px-4" hidden value="git clone https://github.com/muhrusdi/gabo.git my-site" />
               <button onClick={handleCopyToClipboard} className="text-fuchsia-700 absolute right-2 top-1/2 -translate-y-1/2 rounded-md hover:bg-fuchsia-200 transition p-1">
                 {
                   copied ? (
