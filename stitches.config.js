@@ -6,7 +6,7 @@ import {
   blueDark,
 } from "@radix-ui/colors"
 
-export const { theme, styled, css, getCssText, createTheme } = createStitches({
+export const { theme, styled, css, getCssText, createTheme, keyframes } = createStitches({
   theme: {
     colors: {
       ...gray,
