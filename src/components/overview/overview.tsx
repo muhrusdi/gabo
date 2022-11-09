@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react"
 import { StyledOverview, StyledSpan, StyledTechList } from "./styled"
-import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../seo"
 
 export const Overview = () => {
@@ -366,21 +365,9 @@ export const Overview = () => {
             </div>
           </div>
           <footer className="fixed bottom-8 left-1/2 -translate-x-1/2 transform">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-1">
               <div className="text-slate-500">
                 <span>By</span>
-              </div>
-              <div>
-                <StaticImage
-                  placeholder="blurred"
-                  aspectRatio={16 / 9}
-                  height={32}
-                  width={32}
-                  layout="constrained"
-                  className="h-8 w-8 rounded-full"
-                  src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png"
-                  alt=""
-                />
               </div>
               <div>
                 <a
